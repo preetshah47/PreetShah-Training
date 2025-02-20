@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Welcome to Death Game!</h2>
+    <a href="{{ url_for('register') }}" class="btn btn-primary">Register</a>
+    <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Update User</h2>
+<form method="POST">
+    <input type="text" name="username" value="{{ user.username }}" required>
+    <input type="email" name="email" value="{{ user.email }}" required>
+    <select name="role">
+        <option value="Admin" {% if user.role == 'Admin' %}selected{% endif %}>Admin</option>
+        <option value="Manager" {% if user.role == 'Manager' %}selected{% endif %}>Manager</option>
+        <option value="User" {% if user.role == 'User' %}selected{% endif %}>User</option>
+    </select>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+<a href="{{ url_for('view_users') }}" class="btn btn-default">Back</a>
+{% endblock %}
